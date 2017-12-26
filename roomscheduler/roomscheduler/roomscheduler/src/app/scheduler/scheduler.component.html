@@ -1,0 +1,102 @@
+<div id="header">
+  <div id='cssmenu'>
+    <ul>
+      <li class='active'><a href='#'><span>Home</span></a></li>
+      <li><a href='#'><span>Products</span></a></li>
+      <li><a href='#'><span>Company</span></a></li>
+      <li class='last'><a href='#'><span>Contact</span></a></li>
+    </ul>
+  </div>
+  </div>
+  <!--<strong>HEADER</strong>-->
+  <modal id="custom-modal-3">
+    <div class="modal">
+      <div class="modal-body">
+        <div class="center">
+          <h1>Create Event</h1>
+          <form [formGroup]="form">
+            <div class="form-item" style="padding:5px;">
+              <input formControlName="name" type="text" placeholder="Event Name"> <span *ngIf="!form.controls.name.valid">Event name required</span>
+            </div>
+            <div class="form-item" style="padding:5px;">
+              <select formControlName="resource">
+                <option *ngFor="let r of resources" [ngValue]="r.id">{{r.name}}</option>
+              </select>
+            </div>
+            <div class="form-item" style="padding:5px;">
+              <input formControlName="start" type="text" placeholder="Start"> <span *ngIf="!form.controls.start.valid">Invalid datetime</span>
+            </div>
+            <div class="form-item" style="padding:5px;">
+              <input formControlName="end" type="text" placeholder="End"> <span *ngIf="!form.controls.end.valid">Invalid datetime</span>
+            </div>
+            <div class="form-item" style="padding:5px;">
+              <button (click)="submit()" [disabled]="!form.valid">Create</button>
+              <button (click)="cancel()">Cancel</button>
+            </div>
+          </form>
+        </div>
+        <button (click)="closeModal('custom-modal-3');">Close</button>
+      </div>
+    </div>
+    <div class="modal-background"></div>
+  </modal>
+  <modal id="custom-modal-4">
+    <div class="modal">
+      <div class="modal-body">
+        <div class="center">
+          <h1>Update Event</h1>
+          <form [formGroup]="form">
+            <div class="form-item">
+              <input formControlName="name" type="text" placeholder="Event Name"> <span *ngIf="!form.controls.name.valid">Event name required</span>
+            </div>
+            <div class="form-item">
+              <select formControlName="resource">
+                <option *ngFor="let r of resources" [ngValue]="r.id">{{r.name}}</option>
+              </select>
+            </div>
+            <div class="form-item">
+              <input formControlName="start" type="text" placeholder="Start"> <span *ngIf="!form.controls.start.valid">Invalid datetime</span>
+            </div>
+            <div class="form-item">
+              <input formControlName="end" type="text" placeholder="End"> <span *ngIf="!form.controls.end.valid">Invalid datetime</span>
+            </div>
+            <div class="form-item">
+              <button (click)="submitedit()" [disabled]="!form.valid">Create</button>
+              <button (click)="cancel()">Cancel</button>
+            </div>
+          </form>
+        </div>
+
+          <button (click)="closeModal('custom-modal-4');">Close</button>
+        </div>
+      </div>
+        <div class="modal-background"></div>
+  </modal>
+
+  <div id="content">
+    <button (click)="openModal('custom-modal-3')">Open Modal 3</button>
+    <sidebar-container #sidebar [(expanded)]="expanded">
+      <sidebar-expanded>
+        <div style="padding: 3px;">
+          <daypilot-navigator [config]="navigatorConfig" (dateChange)="dateChange()" #navigator></daypilot-navigator>
+        </div>
+      </sidebar-expanded>
+      <sidebar-collapsed></sidebar-collapsed>
+      <sidebar-main>
+        <div class="main-header">
+          <button (click)="createRoom()">Add Room...</button>
+        </div>
+        <div class="main-body">
+          <daypilot-scheduler [config]="config" [events]="events" #scheduler></daypilot-scheduler>
+          <create-dialog #create (close)="createClosed($event)"></create-dialog>
+
+          <edit-dialog #edit (close)="editClosed($event)"></edit-dialog>
+          <div class="main-bottom"></div>
+        </div>
+      </sidebar-main>
+    </sidebar-container>
+  </div>
+
+  <div id="footer">
+    <strong>FOOTER</strong>
+  </div>

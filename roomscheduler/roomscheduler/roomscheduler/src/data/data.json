@@ -1,0 +1,19 @@
+{
+    "events" : [
+        {"Id" : "e10", "ResourceId" : "r1", "Name" : "Deal negotiation", "StartDate" : "2016-09-05", "EndDate" : "2016-09-08"},
+        {"Id" : "e22", "ResourceId" : "r2", "Name" : "Attend software conference", "StartDate" : "2016-09-06", "EndDate" : "2016-09-09"},
+        {"Id" : "e43", "ResourceId" : "r3", "Name" : "Visit customer", "StartDate" : "2016-09-05", "EndDate" : "2016-09-06"},
+        {"Id" : "e210", "ResourceId" : "r4", "Name" : "Exhibition", "StartDate" : "2016-09-07", "EndDate" : "2016-09-11"},
+        {"Id" : "e222", "ResourceId" : "r5", "Name" : "Meet customer X", "StartDate" : "2016-09-05", "EndDate" : "2016-09-06"},
+        {"Id" : "e243", "ResourceId" : "r6", "Name" : "Prepare case studies", "StartDate" : "2016-09-06", "EndDate" : "2016-09-08"}
+    ],
+
+    "resources" : [
+        {"Id" : "r1", "Name" : "Mike Anderson" },
+        {"Id" : "r2", "Name" : "Kevin Larson" },
+        {"Id" : "r3", "Name" : "Brett Hornbach" },
+        {"Id" : "r4", "Name" : "Patrick Davis" },
+        {"Id" : "r5", "Name" : "Jack Larson" },
+        {"Id" : "r6", "Name" : "Dennis King" }
+    ]
+}

@@ -1,0 +1,51 @@
+<div class="col-md-6 col-md-offset-3">
+    <h1>Home</h1>
+    <p>{{bodyText}}</p>
+    <button (click)="openModal('custom-modal-1')">Open Modal 1</button>
+    <button (click)="openModal('custom-modal-2')">Open Modal 2</button>
+</div>
+
+<!--<modal id="custom-modal-1">
+    <div class="modal">
+        <div class="modal-body">
+            <h1>A Custom Modal!</h1>
+            <p>
+                Home page text: <input type="text" [(ngModel)]="bodyText" />
+            </p>
+            <button (click)="closeModal('custom-modal-1');">Close</button>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
+
+<modal id="custom-modal-2">
+    <div class="modal">
+        <div class="modal-body">
+          <div class="center">
+            <h1>Create Event</h1>
+            <form [formGroup]="form">
+              <div class="form-item">
+                <input formControlName="name" type="text" placeholder="Event Name"> <span *ngIf="!form.controls.name.valid">Event name required</span>
+              </div>
+              <div class="form-item">
+                <select formControlName="resource">
+                  <option *ngFor="let r of resources" [ngValue]="r.id">{{r.name}}</option>
+                </select>
+              </div>
+              <div class="form-item">
+                <input formControlName="start" type="text" placeholder="Start"> <span *ngIf="!form.controls.start.valid">Invalid datetime</span>
+              </div>
+              <div class="form-item">
+                <input formControlName="end" type="text" placeholder="End"> <span *ngIf="!form.controls.end.valid">Invalid datetime</span>
+              </div>
+              <div class="form-item">
+                <button (click)="submit()" [disabled]="!form.valid">Create</button>
+                <button (click)="cancel()">Cancel</button>
+              </div>
+            </form>
+          </div>
+            <button (click)="closeModal('custom-modal-2');">Close</button>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>-->
